@@ -1,5 +1,6 @@
 const net = require('net');
 
+
 const connect = function() {
   const conn = net.createConnection({ 
   host: '172.46.2.204',
@@ -10,6 +11,12 @@ conn.setEncoding('utf8');
 conn.on('data', (data) => {
   console.log('Server says: ', data);
 });
+
+conn.on('connect', () => {
+  console.log('Successfully connected to game server');
+  conn.write('DBS');
+});
+
 
 return conn;
 }
