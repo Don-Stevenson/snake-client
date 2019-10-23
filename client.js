@@ -14,7 +14,12 @@ conn.on('data', (data) => {
 
 conn.on('connect', () => {
   console.log('Successfully connected to game server');
-  conn.write('DBS');
+  conn.write('Name: DBS');
+  // // setInterval(conn.write("Move: up"), 500);
+  // conn.write("Move: down");
+  // conn.write("Move: left");
+  // conn.write("Move: right");
+
 });
 
 
